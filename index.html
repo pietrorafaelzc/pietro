@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas Digitais — O Guia Minimalista e Prático</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for minimalist clean feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-100 selection:text-emerald-900">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold text-lg group-hover:bg-emerald-600 transition-colors">
+                    V
+                </div>
+                <span class="font-semibold text-slate-900 tracking-tight text-lg">Vendas<span class="text-emerald-600">Digitais</span></span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#o-que-e" class="hover:text-slate-900 transition-colors">O que é?</a>
+                <a href="#modelos" class="hover:text-slate-900 transition-colors">Modelos</a>
+                <a href="#simulador" class="hover:text-slate-900 transition-colors">Simulador</a>
+                <a href="#passo-a-passo" class="hover:text-slate-900 transition-colors">Como Funciona</a>
+                <a href="#faq" class="hover:text-slate-900 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="flex items-center gap-3">
+                <a href="#simulador" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-slate-900 text-white hover:bg-slate-800 transition-all shadow-sm hover:shadow">
+                    Calcular Potencial
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3">
+            <a href="#o-que-e" class="block py-2 text-slate-600 font-medium hover:text-emerald-600">O que é?</a>
+            <a href="#modelos" class="block py-2 text-slate-600 font-medium hover:text-emerald-600">Modelos de Negócio</a>
+            <a href="#simulador" class="block py-2 text-slate-600 font-medium hover:text-emerald-600">Simulador de Faturamento</a>
+            <a href="#passo-a-passo" class="block py-2 text-slate-600 font-medium hover:text-emerald-600">Passo a Passo</a>
+            <a href="#faq" class="block py-2 text-slate-600 font-medium hover:text-emerald-600">Perguntas Frequentes</a>
+            <a href="#simulador" class="block w-full text-center py-2.5 rounded-lg bg-emerald-600 text-white font-medium">Calcular Potencial</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+                
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold tracking-wide uppercase mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Guia Prático e Descomplicado
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.15] mb-6">
+                    Aprenda a vender no digital <br class="hidden sm:inline">
+                    <span class="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">sem complexidade e sem enrolação</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto mb-10">
+                    Vender produtos ou serviços pela internet não precisa ser um bicho de sete cabeças. Entenda a lógica simples por trás dos negócios digitais que funcionam.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#modelos" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-medium text-white bg-slate-900 hover:bg-slate-800 transition-all shadow-md hover:shadow-lg">
+                        <span>Explorar Modelos</span>
+                        <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#diagnostico" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-medium text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 transition-all">
+                        <i data-lucide="compass" class="w-4 h-4 text-emerald-600"></i>
+                        <span>Qual modelo combina comigo?</span>
+                    </a>
+                </div>
+
+                <!-- Minimalist Key Metrics/Features Badges -->
+                <div class="mt-16 pt-10 border-t border-slate-200/80 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-slate-900">24/7</span>
+                        <span class="text-xs text-slate-500 mt-0.5">Vendas automáticas enquanto você dorme</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-slate-900">Global</span>
+                        <span class="text-xs text-slate-500 mt-0.5">Sem barreiras geográficas de clientes</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-slate-900">Escalável</span>
+                        <span class="text-xs text-slate-500 mt-0.5">Custo fixo baixo com margem alta</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-slate-900">Acessível</span>
+                        <span class="text-xs text-slate-500 mt-0.5">Dá para começar com investimento baixo</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- O QUE SÃO VENDAS DIGITAIS? -->
+        <section id="o-que-e" class="py-16 md:py-24 bg-white border-y border-slate-200/60">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6">
+                <div class="max-w-2xl mb-12">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-2">Conceito Básico</h2>
+                    <p class="text-3xl font-bold text-slate-900 tracking-tight">O que são vendas digitais em termos simples?</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Core Concept 1 -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 hover:border-emerald-200 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 text-lg mb-2">1. O Produto</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Pode ser <strong>digital</strong> (um e-book, curso, software, mentoria) ou <strong>físico</strong> (roupas, eletrônicos, cosméticos) vendido online.
+                        </p>
+                    </div>
+
+                    <!-- Core Concept 2 -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 hover:border-emerald-200 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4">
+                            <i data-lucide="users" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 text-lg mb-2">2. A Atração</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Em vez de uma vitrine de rua, você atrai pessoas interessadas através das redes sociais, anúncios pagos ou pesquisas no Google.
+                        </p>
+                    </div>
+
+                    <!-- Core Concept 3 -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 hover:border-emerald-200 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4">
+                            <i data-lucide="credit-card" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 text-lg mb-2">3. O Checkout</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            O pagamento ocorre por meio de plataformas digitais (Pix, Cartão) de forma automática e segura para o comprador.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Comparison Box -->
+                <div class="mt-12 p-6 sm:p-8 rounded-2xl bg-slate-900 text-white flex flex-col md:flex-row gap-6 items-center justify-between">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">A grande diferença do mercado tradicional:</h4>
+                        <p class="text-slate-300 text-sm max-w-xl leading-relaxed">
+                            No comércio físico, seu faturamento depende de quantas pessoas passam em frente à sua loja. No digital, você escolhe exatamente para quem quer mostrar seu produto, em qualquer lugar do mundo.
+                        </p>
+                    </div>
+                    <div class="shrink-0">
+                        <a href="#simulador" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-colors">
+                            Ver Na Prática <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OS 4 MODELOS PRINCIPAIS DE VENDAS DIGITAIS -->
+        <section id="modelos" class="py-16 md:py-24 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-2">Modelos Populares</h2>
+                    <p class="text-3xl font-bold text-slate-900 tracking-tight">Como escolher a melhor forma de vender?</p>
+                    <p class="text-slate-600 mt-3 text-sm sm:text-base">Existem várias formas de entrar no mercado digital. Conheça as quatro mais utilizadas:</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Card 1: Infoprodutos -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="p-3 rounded-xl bg-slate-100 text-slate-900">
+                                    <i data-lucide="book-open" class="w-6 h-6 text-emerald-600"></i>
+                                </span>
+                                <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">Margem Mais Alta</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">1. Infoprodutos (Cursos e E-books)</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Você empacota seu conhecimento sobre algum assunto específico e vende em formato de vídeo, PDF ou áudio.
+                            </p>
+                            <ul class="space-y-2 mb-6 text-xs text-slate-600">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                                    <strong>Vantagem:</strong> Custa zero para produzir cópias adicionais.
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                                    <strong>Exemplo:</strong> E-book de receitas saudáveis, curso de inglês online.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span>Complexidade: <strong class="text-slate-700">Média</strong></span>
+                            <span>Barreira de Entrada: <strong class="text-slate-700">Baixa</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Marketing de Afiliados -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="p-3 rounded-xl bg-slate-100 text-slate-900">
+                                    <i data-lucide="share-2" class="w-6 h-6 text-emerald-600"></i>
+                                </span>
+                                <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">Sem Criar Produto</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">2. Marketing de Afiliados</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Você divulga o produto de outra pessoa ou empresa através de um link exclusivo e ganha uma comissão por cada venda realizada.
+                            </p>
+                            <ul class="space-y-2 mb-6 text-xs text-slate-600">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                                    <strong>Vantagem:</strong> Não precisa se preocupar com suporte nem entrega.
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                                    <strong>Exemplo:</strong> Recomendar livros na Amazon, divulgar softwares de terceiros.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span>Complexidade: <strong class="text-slate-700">Baixa</strong></span>
+                            <span>Barreira de Entrada: <strong class="text-slate-700">Muito Baixa</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: E-commerce e Dropshipping -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="p-3 rounded-xl bg-slate-100 text-slate-900">
+                                    <i data-lucide="package" class="w-6 h-6 text-emerald-600"></i>
+                                </span>
+                                <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">Produtos Físicos</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">3. E-commerce / Dropshipping</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Venda de itens tangíveis através de loja virtual própria ou marketplaces. No dropshipping, o fornecedor envia direto ao cliente.
+                            </p>
+                            <ul class="space-y-2 mb-6 text-xs text-slate-600">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                                    <strong>Vantagem:</strong> Altíssima aceitação do público para bens tangíveis.
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                                    <strong>Exemplo:</strong> Loja de acessórios para celular, marca autoral de roupas.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span>Complexidade: <strong class="text-slate-700">Média-Alta</strong></span>
+                            <span>Barreira de Entrada: <strong class="text-slate-700">Média</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Serviços & SaaS / Assinaturas -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="p-3 rounded-xl bg-slate-100 text-slate-900">
+                                    <i data-lucide="repeat" class="w-6 h-6 text-emerald-600"></i>
+                                </span>
+                                <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-50 text-purple-700 border border-purple-200">Receita Recorrente</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">4. Serviços Digitais & Assinaturas</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Oferecer consultorias, serviços freelancer ou plataformas onde o cliente paga uma mensalidade pelo acesso contínuo.
+                            </p>
+                            <ul class="space-y-2 mb-6 text-xs text-slate-600">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                                    <strong>Vantagem:</strong> Previsibilidade de faturamento mês a mês.
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                                    <strong>Exemplo:</strong> Gestão de tráfego pago, clube de membros vip.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span>Complexidade: <strong class="text-slate-700">Alta</strong></span>
+                            <span>Barreira de Entrada: <strong class="text-slate-700">Média</strong></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMULADOR INTERATIVO DE FATURAMENTO -->
+        <section id="simulador" class="py-16 md:py-24 bg-white border-y border-slate-200/60">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6">
+                
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-3">
+                        <i data-lucide="calculator" class="w-3.5 h-3.5"></i> Ferramenta Interativa
+                    </span>
+                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Simulador de Faturamento Digital</h2>
+                    <p class="text-slate-600 mt-2 text-sm sm:text-base">A matemática das vendas digitais se resume a 3 pilares: Visitas x Taxa de Conversão x Ticket Médio.</p>
+                </div>
+
+                <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Controls Column -->
+                    <div class="lg:col-span-7 space-y-6">
+                        
+                        <!-- Slider 1: Visitas -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-sm font-medium text-slate-300">1. Pessoas que vêem sua oferta (Visitas/Mês)</label>
+                                <span id="val-visitas" class="text-lg font-bold text-emerald-400">2.000</span>
+                            </div>
+                            <input type="range" id="input-visitas" min="500" max="50000" step="500" value="2000" 
+                                   class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                                <span>500 pessoas</span>
+                                <span>50.000 pessoas</span>
+                            </div>
+                        </div>
+
+                        <!-- Slider 2: Taxa de Conversão -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-sm font-medium text-slate-300">2. Taxa de Conversão (% que compram)</label>
+                                <span id="val-conversao" class="text-lg font-bold text-emerald-400">1.5%</span>
+                            </div>
+                            <input type="range" id="input-conversao" min="0.2" max="5.0" step="0.1" value="1.5" 
+                                   class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                                <span>0.2% (Padrão baixo)</span>
+                                <span>5.0% (Alta conversão)</span>
+                            </div>
+                        </div>
+
+                        <!-- Slider 3: Ticket Médio -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-sm font-medium text-slate-300">3. Preço Médio do Produto (Ticket R$)</label>
+                                <span id="val-ticket" class="text-lg font-bold text-emerald-400">R$ 97</span>
+                            </div>
+                            <input type="range" id="input-ticket" min="19" max="1000" step="10" value="97" 
+                                   class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                                <span>R$ 19</span>
+                                <span>R$ 1.000</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Output Column -->
+                    <div class="lg:col-span-5 bg-slate-800/90 border border-slate-700/80 rounded-2xl p-6 flex flex-col justify-between text-center lg:text-left space-y-6">
+                        <div>
+                            <span class="text-xs uppercase font-bold text-slate-400 tracking-wider">Estimativa da Fórmula</span>
+                            <div class="mt-4">
+                                <span class="text-sm text-slate-300 block">Vendas Estimadas / Mês</span>
+                                <span id="res-vendas" class="text-3xl font-extrabold text-white">30 vendas</span>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-slate-700">
+                                <span class="text-sm text-slate-300 block">Faturamento Bruto / Mês</span>
+                                <span id="res-faturamento" class="text-4xl font-extrabold text-emerald-400">R$ 2.910,00</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-700 text-xs text-slate-400 leading-relaxed">
+                            <i data-lucide="info" class="w-4 h-4 text-emerald-400 inline mr-1 -mt-0.5"></i>
+                            <strong>Nota:</strong> A taxa média de conversão no Brasil varia entre 1% e 2.5%. Ajuste os valores acima para testar seus cenários!
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- O PASSO A PASSO DA VENDA DIGITAL (O FUNIL MÍNIMO) -->
+        <section id="passo-a-passo" class="py-16 md:py-24 bg-slate-50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6">
+                
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-2">Engrenagem de Vendas</h2>
+                    <p class="text-3xl font-bold text-slate-900 tracking-tight">Como funciona o caminho do cliente?</p>
+                    <p class="text-slate-600 mt-2 text-sm sm:text-base">Qualquer estrutura de venda na internet passa obrigatoriamente por 4 etapas simples:</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+                    
+                    <!-- Step 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 relative z-10 flex flex-col justify-between">
+                        <div>
+                            <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold text-sm flex items-center justify-center mb-4">
+                                01
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base mb-2">Atração</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Levar desconhecidos até a sua página por meio de posts no Instagram, vídeos no YouTube ou anúncios pagos.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-medium text-emerald-600 flex items-center gap-1">
+                            <i data-lucide="eye" class="w-3.5 h-3.5"></i> Tráfego
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 relative z-10 flex flex-col justify-between">
+                        <div>
+                            <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold text-sm flex items-center justify-center mb-4">
+                                02
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base mb-2">Interesse</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Mostrar claramente como seu produto resolve uma dor específica daquela pessoa. Criar desejo pela solução.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-medium text-emerald-600 flex items-center gap-1">
+                            <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Página de Venda
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 relative z-10 flex flex-col justify-between">
+                        <div>
+                            <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold text-sm flex items-center justify-center mb-4">
+                                03
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base mb-2">Decisão</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                O cliente escolhe comprar. Ele clica no botão e vai para a tela de checkout seguro de pagamento.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-medium text-emerald-600 flex items-center gap-1">
+                            <i data-lucide="lock" class="w-3.5 h-3.5"></i> Checkout
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 relative z-10 flex flex-col justify-between">
+                        <div>
+                            <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold text-sm flex items-center justify-center mb-4">
+                                04
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base mb-2">Entrega</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                O sistema envia automaticamente os dados de acesso por e-mail ou o produto físico entra em separação.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-medium text-emerald-600 flex items-center gap-1">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Pós-Venda
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- QUIZ DE DIAGNÓSTICO INTERATIVO -->
+        <section id="diagnostico" class="py-16 md:py-24 bg-white border-t border-slate-200/60">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6">
+                
+                <div class="text-center mb-10">
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Diagnóstico Rápido</span>
+                    <h2 class="text-3xl font-bold text-slate-900 mt-1">Por onde eu devo começar?</h2>
+                    <p class="text-slate-600 text-sm mt-2">Responda 3 perguntas rápidas para descobrir o modelo ideal para seu perfil.</p>
+                </div>
+
+                <div id="quiz-container" class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
+                    
+                    <!-- Question 1 -->
+                    <div id="quiz-q1" class="quiz-step space-y-4">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Pergunta 1 de 3</span>
+                        <h3 class="text-lg font-semibold text-slate-900">Quanto tempo você tem disponível por dia?</h3>
+                        <div class="grid grid-cols-1 gap-3 pt-2">
+                            <button onclick="quizAnswer(1, 'pouco')" class="text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/40 transition-all font-medium text-slate-700 text-sm">
+                                ⏱️ Menos de 2 horas por dia
+                            </button>
+                            <button onclick="quizAnswer(1, 'medio')" class="text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/40 transition-all font-medium text-slate-700 text-sm">
+                                ⏰ De 2 a 4 horas por dia
+                            </button>
+                            <button onclick="quizAnswer(1, 'total')" class="text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/40 transition-all font-medium text-slate-700 text-sm">
+                                🚀 Dedicação total / Empreender em tempo integral
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div id="quiz-q2" class="quiz-step hidden space-y-4">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Pergunta 2 de 3</span>
+                        <h3 class="text-lg font-semibold text-slate-900">Você deseja gravar vídeos ou aparecer nas redes sociais?</h3>
+                        <div class="grid grid-cols-1 gap-3 pt-2">
+                            <button onclick="quizAnswer(2, 'nao')" class="text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/40 transition-all font-medium text-slate-700 text-sm">
+                                🙈 Prefiro trabalhar 100% nos bastidores (sem aparecer)
+                            </button>
+                            <button onclick="quizAnswer(2, 'sim')" class="text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/40 transition-all font-medium text-slate-700 text-sm">
+                                🙋‍♂️ Adoro ensinar, falar em público ou criar conteúdo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div id="quiz-q3" class="quiz-step hidden space-y-4">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Pergunta 3 de 3</span>
+                        <h3 class="text-lg font-semibold text-slate-900">Qual é o seu orçamento inicial para investir?</h3>
+                        <div class="grid grid-cols-1 gap-3 pt-2">
+                            <button onclick="quizAnswer(3, 'baixo')" class="text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/40 transition-all font-medium text-slate-700 text-sm">
+                                💸 Mínimo possível (Quero começar com quase R$0)
+                            </button>
+                            <button onclick="quizAnswer(3, 'medio')" class="text-left p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-500 hover:bg-emerald-50/40 transition-all font-medium text-slate-700 text-sm">
+                                💳 Moderado (Consigo investir em anúncios e ferramentas)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Result Step -->
+                    <div id="quiz-result" class="hidden space-y-4 text-center py-4">
+                        <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-2">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Recomendação Personalizada</span>
+                        <h3 id="result-title" class="text-2xl font-bold text-slate-900">Marketing de Afiliados sem Aparecer</h3>
+                        <p id="result-desc" class="text-slate-600 text-sm max-w-lg mx-auto leading-relaxed">
+                            A melhor opção para o seu momento é começar indicando produtos digitais de terceiros utilizando anúncios ou perfis temáticos, sem precisar expor sua imagem ou criar produtos do zero.
+                        </p>
+                        <div class="pt-4">
+                            <button onclick="resetQuiz()" class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-100 text-xs font-semibold transition-all">
+                                Refazer Teste
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ (PERGUNTAS FREQUENTES) -->
+        <section id="faq" class="py-16 md:py-24 bg-slate-50 border-t border-slate-200/60">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                
+                <div class="text-center max-w-xl mx-auto mb-12">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-2">Dúvidas Comuns</h2>
+                    <p class="text-3xl font-bold text-slate-900">Perguntas Frequentes</p>
+                </div>
+
+                <div class="space-y-4">
+                    
+                    <!-- FAQ 1 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                        <button onclick="toggleFaq(1)" class="w-full text-left p-6 font-semibold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50/50 transition-colors">
+                            <span>É preciso ter uma empresa (CNPJ) para começar?</span>
+                            <i id="faq-icon-1" data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+                        </button>
+                        <div id="faq-ans-1" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                            Não imediatamente! Você pode iniciar seu cadastro nas plataformas de pagamento (como Hotmart, Kiwify, Mercado Pago) utilizando seu CPF. À medida que suas vendas aumentarem (geralmente acima de R$ 2.000/mês), vale a pena abrir um MEI ou CNPJ para pagar menos impostos.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                        <button onclick="toggleFaq(2)" class="w-full text-left p-6 font-semibold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50/50 transition-colors">
+                            <span>Quanto tempo demora para ter o primeiro resultado?</span>
+                            <i id="faq-icon-2" data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+                        </button>
+                        <div id="faq-ans-2" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                            Isso depende da estratégia escolhida. Com anúncios pagos (tráfego pago), é possível fazer vendas nos primeiros dias. Já com criação orgânica de conteúdo (redes sociais/YouTube), o resultado costuma vir entre 1 e 3 meses de consistência.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                        <button onclick="toggleFaq(3)" class="w-full text-left p-6 font-semibold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50/50 transition-colors">
+                            <span>O mercado digital está saturado?</span>
+                            <i id="faq-icon-3" data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+                        </button>
+                        <div id="faq-ans-3" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                            O mercado amador está saturado. No entanto, o comércio eletrônico e o consumo de conteúdo digital crescem todos os anos. Quem foca em resolver problemas reais de um público com profissionalismo sempre encontra espaço.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                        <button onclick="toggleFaq(4)" class="w-full text-left p-6 font-semibold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50/50 transition-colors">
+                            <span>Preciso saber programar ou criar sites complexos?</span>
+                            <i id="faq-icon-4" data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform"></i>
+                        </button>
+                        <div id="faq-ans-4" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                            Absolutamente não! Hoje existem ferramentas de "arrasta e solta" totalmente visuais (como Kiwify, WordPress, Canva, Shopify) que permitem colocar uma estrutura completa no ar em poucas horas sem escrever nenhuma linha de código.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA / NEWSLETTER SECTION -->
+        <section class="py-16 md:py-20 bg-slate-900 text-white relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Pronto para dar o primeiro passo?</h2>
+                <p class="text-slate-300 text-base max-w-xl mx-auto mb-8">
+                    Receba quinzenalmente nossos resumos práticos com estratégias testadas para começar no digital.
+                </p>
+
+                <form id="newsletter-form" onsubmit="handleNewsletter(event)" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                    <input type="email" required placeholder="Seu melhor e-mail" 
+                           class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500 text-sm">
+                    <button type="submit" class="shrink-0 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all shadow-md">
+                        Inscrever Grátis
+                    </button>
+                </form>
+                <span class="text-xs text-slate-500 block mt-3">Sem spam. Cancele sua inscrição quando quiser.</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-200 py-12 text-slate-500 text-xs">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded bg-slate-900 text-white flex items-center justify-center font-bold text-xs">V</div>
+                <span class="font-semibold text-slate-900 text-sm">VendasDigitais</span>
+                <span class="text-slate-400">© 2026. Todos os direitos reservados.</span>
+            </div>
+            
+            <div class="flex gap-6 text-slate-600">
+                <a href="#" class="hover:text-slate-900 transition-colors">Termos de Uso</a>
+                <a href="#" class="hover:text-slate-900 transition-colors">Privacidade</a>
+                <a href="#faq" class="hover:text-slate-900 transition-colors">Suporte</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Toast Notification Box (Replaces alert) -->
+    <div id="toast" class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 z-50 pointer-events-none">
+        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+        <span id="toast-msg" class="text-sm font-medium">Inscrição realizada com sucesso!</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // ----------------------------------------------------
+        // REVENUE SIMULATOR CALCULATOR
+        // ----------------------------------------------------
+        const inVisitas = document.getElementById('input-visitas');
+        const inConversao = document.getElementById('input-conversao');
+        const inTicket = document.getElementById('input-ticket');
+
+        const valVisitas = document.getElementById('val-visitas');
+        const valConversao = document.getElementById('val-conversao');
+        const valTicket = document.getElementById('val-ticket');
+
+        const resVendas = document.getElementById('res-vendas');
+        const resFaturamento = document.getElementById('res-faturamento');
+
+        function updateSimulator() {
+            const visitas = parseInt(inVisitas.value);
+            const conversao = parseFloat(inConversao.value);
+            const ticket = parseInt(inTicket.value);
+
+            // Calculate estimated sales
+            const vendas = Math.round(visitas * (conversao / 100));
+            const faturamento = vendas * ticket;
+
+            // Format numbers to BRL & readable string
+            valVisitas.textContent = visitas.toLocaleString('pt-BR');
+            valConversao.textContent = conversao.toFixed(1) + '%';
+            valTicket.textContent = 'R$ ' + ticket.toLocaleString('pt-BR');
+
+            resVendas.textContent = vendas.toLocaleString('pt-BR') + ' vendas';
+            resFaturamento.textContent = faturamento.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        inVisitas.addEventListener('input', updateSimulator);
+        inConversao.addEventListener('input', updateSimulator);
+        inTicket.addEventListener('input', updateSimulator);
+
+        // Initial run
+        updateSimulator();
+
+        // ----------------------------------------------------
+        // DIAGNOSTIC QUIZ LOGIC
+        // ----------------------------------------------------
+        let quizAnswers = {};
+
+        function quizAnswer(step, option) {
+            quizAnswers[step] = option;
+            
+            document.getElementById(`quiz-q${step}`).classList.add('hidden');
+
+            if (step < 3) {
+                document.getElementById(`quiz-q${step + 1}`).classList.remove('hidden');
+            } else {
+                calculateQuizResult();
+            }
+        }
+
+        function calculateQuizResult() {
+            const resultBox = document.getElementById('quiz-result');
+            const titleBox = document.getElementById('result-title');
+            const descBox = document.getElementById('result-desc');
+
+            resultBox.classList.remove('hidden');
+
+            const { 1: tempo, 2: aparecer, 3: grana } = quizAnswers;
+
+            if (aparecer === 'sim' && tempo !== 'pouco') {
+                titleBox.textContent = "Criador de Infoprodutos ou Mentor";
+                descBox.textContent = "Você tem facilidade para se comunicar e tempo disponível! Crie um e-book, curso ou mentoria autoral baseada no seu conhecimento e venda diretamente ao seu público nas redes sociais.";
+            } else if (aparecer === 'nao' && grana === 'baixo') {
+                titleBox.textContent = "Marketing de Afiliados sem Aparecer";
+                descBox.textContent = "Excelente para começar sem investir muito! Você pode criar perfis temáticos ou utilizar tráfego de indicação para recomendar cursos e ferramentas digitais de terceiros sem expor sua imagem.";
+            } else if (grana === 'medio') {
+                titleBox.textContent = "Tráfego Pago para Afiliados / E-commerce";
+                descBox.textContent = "Com orçamento para investir em anúncios no Meta Ads ou Google Ads, você pode escalar vendas rapidamente enviando pessoas direto para páginas de alta conversão sem precisar criar conteúdo diariamente.";
+            } else {
+                titleBox.textContent = "Prestação de Serviços Digitais (Freelancer/Gestão)";
+                descBox.textContent = "Ótimo ponto de partida! Você pode oferecer serviços como gestão de redes sociais, suporte de atendimento ou tráfego pago para empresas locais e obter faturamento rápido.";
+            }
+        }
+
+        function resetQuiz() {
+            quizAnswers = {};
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('quiz-q2').classList.add('hidden');
+            document.getElementById('quiz-q3').classList.add('hidden');
+            document.getElementById('quiz-q1').classList.remove('hidden');
+        }
+
+        // ----------------------------------------------------
+        // FAQ ACCORDION TOGGLE
+        // ----------------------------------------------------
+        function toggleFaq(index) {
+            const ans = document.getElementById(`faq-ans-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                ans.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // ----------------------------------------------------
+        // CUSTOM TOAST NOTIFICATION (No alerts)
+        // ----------------------------------------------------
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const msg = document.getElementById('toast-msg');
+            
+            msg.textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+            }, 3500);
+        }
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            showToast('Obrigado! Seu e-mail foi cadastrado com sucesso.');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
